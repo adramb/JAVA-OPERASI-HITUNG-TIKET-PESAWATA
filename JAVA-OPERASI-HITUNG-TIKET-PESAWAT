@@ -1,0 +1,73 @@
+import java.util.Scanner;
+public class latihan_uap_no2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String pesawat;
+        int jumlah_tiket, harga_tiket, diskon, total, pilihan;
+
+        System.out.println("              BELITIKET DOT COM");
+        System.out.println("Silahkan Pilih Nama Pesawat Yang Diinginkan !!!");
+        System.out.println("1). Garuda");
+        System.out.println("2). Lion ");
+        System.out.println("3). Citilink");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.print("Silahkan Pilih ( [1] atau [2] atau [3] ) :");
+        pilihan = input.nextInt();
+        System.out.print("Masukan Jumlah Tiket yang Ingin Di Beli :");
+        jumlah_tiket = input.nextInt();
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+        harga_tiket = 0;
+        pesawat = " ";
+        diskon = 0;
+        total = 0;
+
+        if (pilihan == 1) {
+            if (jumlah_tiket >= 100) {
+                harga_tiket = 400000;
+                pesawat = "Garuda - Diskon 50%";
+                diskon = 200000;
+                total = (harga_tiket - diskon) * jumlah_tiket;
+
+            } else {
+                harga_tiket = 400000;
+                pesawat = "Garuda - Tidak Ada Diskon";
+                total = harga_tiket * jumlah_tiket;
+            }
+        }
+        if (pilihan == 2) {
+            if (jumlah_tiket >= 100) {
+                harga_tiket = 200000;
+                pesawat = "Lion - Diskon 50%";
+                diskon = 100000;
+                total = (harga_tiket - diskon) * jumlah_tiket;
+
+            } else {
+                harga_tiket = 200000;
+                pesawat = "Garuda - Tidak Ada Diskon";
+                total = harga_tiket * jumlah_tiket;
+            }
+        }
+        if (pilihan == 3) {
+            if (jumlah_tiket >= 100) {
+                harga_tiket = 300000;
+                pesawat = "Citilink - Diskon 50%";
+                diskon = 150000;
+                total = (harga_tiket - diskon) * jumlah_tiket;
+
+            } else {
+                harga_tiket = 300000;
+                pesawat = "Citilink - Tidak Ada Diskon";
+                total = harga_tiket * jumlah_tiket;
+            }
+        }
+
+        System.out.println("Nama Pesawat : " + pesawat);
+        System.out.println("Harga Tiket : " + harga_tiket);
+        System.out.println("Diskon : " + diskon);
+        System.out.println("Total : " + total);
+
+        input.close();
+    }
+}
